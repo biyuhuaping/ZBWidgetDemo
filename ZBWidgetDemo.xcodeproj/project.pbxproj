@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A94E1B2D084C8800B4799B /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */; };
+		39A94E1C2D084C8800B4799B /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */; };
 		39CF95462CF89B03002B94A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95452CF89B03002B94A1 /* AppDelegate.m */; };
 		39CF95492CF89B03002B94A1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95482CF89B03002B94A1 /* SceneDelegate.m */; };
 		39CF954C2CF89B03002B94A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CF954B2CF89B03002B94A1 /* ViewController.m */; };
@@ -18,7 +20,6 @@
 		39CF959D2CF8A219002B94A1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CF959C2CF8A219002B94A1 /* SwiftUI.framework */; };
 		39CF95A02CF8A219002B94A1 /* MyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF959F2CF8A219002B94A1 /* MyWidgetBundle.swift */; };
 		39CF95A22CF8A219002B94A1 /* MyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95A12CF8A219002B94A1 /* MyWidget.swift */; };
-		39CF95A42CF8A219002B94A1 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95A32CF8A219002B94A1 /* AppIntent.swift */; };
 		39CF95A62CF8A21C002B94A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39CF95A52CF8A21C002B94A1 /* Assets.xcassets */; };
 		39CF95AA2CF8A21C002B94A1 /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 39CF95982CF8A219002B94A1 /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MyWidget.intentdefinition; sourceTree = "<group>"; };
 		39CF95412CF89B03002B94A1 /* ZBWidgetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBWidgetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CF95442CF89B03002B94A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39CF95452CF89B03002B94A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		39CF959C2CF8A219002B94A1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		39CF959F2CF8A219002B94A1 /* MyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidgetBundle.swift; sourceTree = "<group>"; };
 		39CF95A12CF8A219002B94A1 /* MyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidget.swift; sourceTree = "<group>"; };
-		39CF95A32CF8A219002B94A1 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		39CF95A52CF8A21C002B94A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39CF95A72CF8A21C002B94A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +142,7 @@
 			children = (
 				39CF959F2CF8A219002B94A1 /* MyWidgetBundle.swift */,
 				39CF95A12CF8A219002B94A1 /* MyWidget.swift */,
-				39CF95A32CF8A219002B94A1 /* AppIntent.swift */,
+				39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */,
 				39CF95A52CF8A21C002B94A1 /* Assets.xcassets */,
 				39CF95A72CF8A21C002B94A1 /* Info.plist */,
 			);
@@ -250,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A94E1B2D084C8800B4799B /* MyWidget.intentdefinition in Sources */,
 				39CF954C2CF89B03002B94A1 /* ViewController.m in Sources */,
 				39CF95462CF89B03002B94A1 /* AppDelegate.m in Sources */,
 				39CF95572CF89B06002B94A1 /* main.m in Sources */,
@@ -261,9 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A94E1C2D084C8800B4799B /* MyWidget.intentdefinition in Sources */,
 				39CF95A02CF8A219002B94A1 /* MyWidgetBundle.swift in Sources */,
 				39CF95A22CF8A219002B94A1 /* MyWidget.swift in Sources */,
-				39CF95A42CF8A219002B94A1 /* AppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +485,7 @@
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,6 +515,7 @@
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

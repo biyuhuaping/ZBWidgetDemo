@@ -8,85 +8,66 @@
 import WidgetKit
 import SwiftUI
 
-/// 负责为小组件提供数据
-struct Provider: AppIntentTimelineProvider {
-    /// 1 在首次显示小组件，没有数据时使用占位
+private struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), bgColor: .orange)
     }
 
-    /// 2 获取小组件的快照，例如在小组件库中预览时会调用
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: BackgroundColorSelectionIntent, in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        let entry = SimpleEntry(date: Date(), bgColor: .orange)
+        completion(entry)
     }
-    
-    /// 3 这个方法来获取当前时间和（可选）未来时间的时间线的小组件数据以更新小部件。也就是说你在这个方法中设置在什么时间显示什么内容。
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
+    func getTimeline(for configuration: BackgroundColorSelectionIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+        let entries = [SimpleEntry(date: Date(), bgColor: configuration.bgColor)]
+        let timeline = Timeline(entries: entries, policy: .never)
+        completion(timeline)
     }
 }
 
-/// 小组件的数据模型
-struct SimpleEntry: TimelineEntry {
+private struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let bgColor: BackgroundColor
 }
 
-/// 小组件的视图
-struct MyWidgetEntryView : View {
+private struct IntentWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+        ZStack {
+            bgColor
+            Text(entry.date, style: .date)
+                .font(.subheadline)
+                .multilineTextAlignment(.center)
+        }
+    }
 
-            Text("最喜爱的表情：")
-            Text(entry.configuration.favoriteEmoji)
+    @ViewBuilder
+    private var bgColor: some View {
+        switch entry.bgColor {
+        case .blue:
+            Color.blue
+        case .red:
+            Color.red
+        case .green:
+            Color.green
+        case .orange:
+            Color.orange
+        default:
+            Color.primary.colorInvert()
         }
     }
 }
 
-/// 小组件的配置部分
 struct MyWidget: Widget {
-    let kind: String = "MyWidget"// 唯一标识
-
+    private let kind: String = "MyWidget"
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            MyWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+        IntentConfiguration(kind: kind, intent: BackgroundColorSelectionIntent.self, provider: Provider()) { entry in
+            IntentWidgetEntryView(entry: entry)
         }
+        .configurationDisplayName("MyWidget")
+        .description("具有可配置背景颜色的小部件")
+        .supportedFamilies([.systemSmall])
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-/// 提供小组件在 Xcode 中的预览
-#Preview(as: .systemSmall) {
-    MyWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}
