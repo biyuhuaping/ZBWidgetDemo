@@ -36,21 +36,19 @@ private struct SimpleEntry: TimelineEntry {
 // 使用自定义视图显示小组件内容
 private struct IntentWidgetEntryView: View {
     var entry: Provider.Entry
-
+    
     var body: some View {
         let configuration = entry.configuration
         ZStack {
             bgColor
-            VStack(
-                alignment: .leading,
-                content: {
-                    Text(entry.date, style: .date)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                    Text("姓名：\(configuration.name ?? "无")")
-                    Text("年龄：\(configuration.age ?? 0)")
-                    Text("性别：\(getGender())")
-                })
+            VStack(alignment: .leading, content: {
+                Text(entry.date, style: .date)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
+                Text("姓名：\(configuration.name ?? "无")")
+                Text("年龄：\(configuration.age ?? 0)")
+                Text("性别：\(getGender())")
+            })
         }
     }
     
