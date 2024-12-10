@@ -66,7 +66,7 @@ struct MyWidget: Widget {
             IntentWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MyWidget")
-        .description("具有可配置背景颜色的小部件")
+        .description("可配置背景颜色的小部件")
         .supportedFamilies([.systemSmall])
     }
 }
