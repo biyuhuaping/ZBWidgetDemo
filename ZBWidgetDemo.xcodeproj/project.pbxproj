@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39A94E1B2D084C8800B4799B /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */; };
+		39564D142D08662000BEDFEA /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */; };
 		39A94E1C2D084C8800B4799B /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 39A94E1A2D084C8800B4799B /* MyWidget.intentdefinition */; };
 		39CF95462CF89B03002B94A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95452CF89B03002B94A1 /* AppDelegate.m */; };
 		39CF95492CF89B03002B94A1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CF95482CF89B03002B94A1 /* SceneDelegate.m */; };
@@ -251,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39A94E1B2D084C8800B4799B /* MyWidget.intentdefinition in Sources */,
+				39564D142D08662000BEDFEA /* MyWidget.intentdefinition in Sources */,
 				39CF954C2CF89B03002B94A1 /* ViewController.m in Sources */,
 				39CF95462CF89B03002B94A1 /* AppDelegate.m in Sources */,
 				39CF95572CF89B06002B94A1 /* main.m in Sources */,
